@@ -1,0 +1,28 @@
+import array
+
+# Solicita que o usuário informe a quantidade de números a serem lidos
+# um try pra verificar se o usuario vai digitar um valor válido
+while True:
+    try:
+        n = int(input("Digite a quantidade de números a serem lidos (máximo = 10): "))
+        break
+    except ValueError:
+        print('ERRO! Digite um numero inteiro.')
+
+# Verifica se o valor informado está dentro do limite permitido
+while n > 10:
+         n = int(input("Quantidade de números excede o limite permitido. Digite um valor até 10: "))
+
+# Cria um vetor vazio com tamanho N
+numeros = array.array('i', [0] * n)
+
+# Loop para ler cada número informado pelo usuário e armazená-lo no vetor
+for i in range(n):
+    numeros[i] = int(input("Digite o {}º número: ".format(i+1)))
+
+# Mostra na tela os números negativos lidos
+print("Números negativos lidos:")
+for numero in numeros:
+    if numero < 0:
+        print(numero)
+        
